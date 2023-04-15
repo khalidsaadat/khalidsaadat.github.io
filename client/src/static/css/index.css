@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.root-bg {
+    background-color: #F6F8FA;
+}
+
+.primaryBtn {
+    background: #1F255E;
+}
+
+.whiteBtn {
+    background: #fff;
+    color: #1F255E;
+    border: 1px solid #797979;
+}
+
+.whiteBtn:hover {
+    background: #1F255E;
+    color: #fff;
+}
+
+.primaryBtn:hover {
+    background: #111640;
+}
+
+.cancelBtn {
+    background: #E02423;
+    border-color: #E02423;
+}
+
+.cancelBtn:hover {
+    background: #9A1C1C;
+    border-color: #9A1C1C;
+
+}
+
+.primaryGray {
+    color: #797979;
+}
+
+.side-user-info p {
+    font-size: 12px;
+}
+
+.editProfileBtn {
+    background: red;
+}
+
+img.eduLogo {
+    height: auto;
+}
+
+.editProfileModal {
+    height: 40rem !important;
+}
+
+.jobs-location {
+    font-size: 14px;
+    color: gray;
+    font-style: italic;
+    float: right;
+    padding-top: 0.1rem;
+}
+
+.jobs-salary {
+    font-size: 14px;
+}
+
+/* Card skeleton */
+.card-skeleton {
+    padding: 1.5rem;
+    display: flex;
+    width: 100%;
+}
+.card-skeleton .left-column {
+    margin-right: 0rem;
+}
+.card-skeleton .right-column {
+    flex: 1;
+}
+.card-skeleton .rect-img {
+    border-radius: 0.5rem;
+    width: 5rem;
+    height: 5rem;
+}
+
+/* Navbar */
+.navbar-avatar { 
+    height: 3rem !important;
+    width: 3rem !important;
+}
+
+.navbar-avatar img { 
+    height: 3rem !important;
+    width: 3rem !important;
+}
+/* feed */
+.feed-image {
+    padding-left: 2rem;
+    padding-right: 3rem;
+}
+
+/* Profile */
+.connectedBtn {
+    background: #a7a7a7 !important;
+    color: #0D3D7F !important;
+    font-size: 0.8rem !important;
+    width: 5rem !important;
+}
+
+.verifiedUser {
+    color: #0D3D7F !important;
+}
+/* DMs */
+.avatar > div {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center;
+}
