@@ -1,4 +1,6 @@
 //Backend Authors: Jonathan Haddad 40111053, Saad Hanna  40113826
+const path = require('path');
+const mongoose = require("mongoose");
 
 const express = require("express");
 const { connectDB } = require("./config/connectDB.js");
@@ -23,7 +25,8 @@ app.use(bodyParser.json({ limit: "10mb" }));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 
 dotenv.config();
-connectDB();
+// connectDB();
+mongoose.connect('mongodb+srv://doadmin:4jg96731JCP8oMv0@test-92875802.mongo.ondigitalocean.com/admin')
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -34,6 +37,7 @@ app.use(function (req, res, next) {
 // app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.json());
+app.use(express.static('static'))
 
 app.use("/api/account", userRouter);
 app.use("/api/user/cv", cvRouter);
@@ -51,6 +55,11 @@ app.use("/server/attachments/messages", express.static("server/attachments/messa
 app.use("/server/attachments/feeds", express.static("server/attachments/feeds"));
 app.use("/server/attachments/avatars", express.static("server/attachments/avatars"))
 
-app.listen(process.env.PORT || 8080, () =>
-  console.log(`App listening on port ${process.env.PORT}!`)
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, 'static/index.html'))
+})
+
+const port = process.env.PORT || 8080;
+app.listen(port, () =>
+  console.log(`App listening on port ${port}!`)
 );
