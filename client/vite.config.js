@@ -6,6 +6,9 @@ export default defineConfig({
   plugins: [reactRefresh()],
   server: {
     host: true,
+    build: {
+      chunkSizeWarningLimit: 1000, // Set the warning limit to 1000 KiB
+    },
     proxy: {
       '/api': 'http://localhost:8080',
       '/server': 'http://localhost:8080',
