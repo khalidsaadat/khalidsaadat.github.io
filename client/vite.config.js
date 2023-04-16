@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     host: true,
     build: {
-      chunkSizeWarningLimit: 1000, // Set the warning limit to 1000 KiB
+      chunkSizeWarningLimit: 5000, // Set the warning limit to 1000 KiB
     },
     proxy: {
       '/api': 'http://localhost:8080',
